@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://onsbenmassoud.github.io/portfolio/sitemap.xml
+
+# Fichiers à ne pas indexer
+Disallow: /.github/
+Disallow: /DEPLOYMENT.md

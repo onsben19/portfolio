@@ -1,0 +1,33 @@
+# Fichier de configuration pour GitHub Pages
+# Ce fichier indique à GitHub Pages comment traiter votre site
+
+# Utilisation de Jekyll (activé par défaut)
+markdown: kramdown
+highlighter: rouge
+
+# Configuration du site
+title: "Portfolio - Ons Ben Massoud"
+description: "Portfolio professionnel de Ons Ben Massoud, étudiante en ingénierie logicielle"
+url: "https://onsbenmassoud.github.io"
+baseurl: "/portfolio"
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Inclusion/Exclusion de fichiers
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - DEPLOYMENT.md
+  - .github/copilot-instructions.md
+
+# Configuration par défaut
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
