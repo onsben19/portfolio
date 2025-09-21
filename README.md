@@ -1,5 +1,6 @@
 # Portfolio - Ons Ben Massoud
 
+<<<<<<< HEAD
 An elegant and modern portfolio developed for Ons Ben Massoud, software engineering student at ENIT.
 
 ## 🚀 Features
@@ -34,11 +35,48 @@ portfoli/
 │   └── main.css           # Main CSS styles
 ├── scripts/
 │   └── main.js            # Interactive JavaScript
+=======
+Un portfolio élégant et moderne développé pour Ons Ben Massoud, étudiante en ingénierie logicielle à l'ENIT.
+
+## 🚀 Fonctionnalités
+
+- **Design Moderne** : Interface élégante avec animations fluides
+- **Responsive** : Optimisé pour tous les appareils (desktop, tablet, mobile)
+- **Sections Complètes** :
+  - Accueil avec présentation
+  - À propos
+  - Éducation avec timeline
+  - Expérience professionnelle
+  - Projets académiques
+  - Compétences avec barres de progression animées
+  - Formulaire de contact
+- **Interactions** : Navigation fluide, animations au scroll, effets visuels
+- **Performance** : Code optimisé, lazy loading, animations CSS
+
+## 🛠️ Technologies Utilisées
+
+- **HTML5** : Structure sémantique
+- **CSS3** : Styles modernes avec flexbox/grid, animations, gradients
+- **JavaScript (ES6+)** : Interactions, animations, formulaire
+- **Font Awesome** : Icônes
+- **Google Fonts (Inter)** : Typographie moderne
+
+## 📁 Structure du Projet
+
+```
+portfoli/
+├── index.html              # Page principale
+├── styles/
+│   └── main.css           # Styles CSS principaux
+├── scripts/
+│   └── main.js            # JavaScript interactif
+>>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
 ├── .github/
 │   └── copilot-instructions.md
 └── README.md              # Documentation
 ```
 
+<<<<<<< HEAD
 ## 🚀 Installation and Setup
 
 ### Prerequisites
@@ -47,10 +85,21 @@ portfoli/
 ### Running the project
 
 1. **Open project in VS Code**
+=======
+## 🚀 Installation et Démarrage
+
+### Prérequis
+- VS Code avec l'extension "Live Server" installée
+
+### Lancement du projet
+
+1. **Ouvrir le projet dans VS Code**
+>>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
    ```bash
    code .
    ```
 
+<<<<<<< HEAD
 2. **Method 1: With Live Server (Recommended)**
    - Right-click on `index.html`
    - Select "Open with Live Server"
@@ -59,6 +108,16 @@ portfoli/
 3. **Method 2: Direct opening**
    - Double-click on `index.html`
    - Or open the file in your browser
+=======
+2. **Méthode 1 : Avec Live Server (Recommandée)**
+   - Clic droit sur `index.html`
+   - Sélectionner "Open with Live Server"
+   - Le portfolio s'ouvrira automatiquement dans votre navigateur
+
+3. **Méthode 2 : Ouverture directe**
+   - Double-cliquer sur `index.html`
+   - Ou ouvrir le fichier dans votre navigateur
+>>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
 
 ## 📱 Fonctionnalités Techniques
 
