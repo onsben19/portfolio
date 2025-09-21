@@ -126,39 +126,23 @@ if (contactForm) {
         
         // Simple validation
         if (!name || !email || !subject || !message) {
-<<<<<<< HEAD
             showNotification('Please fill in all fields.', 'error');
-=======
-            showNotification('Veuillez remplir tous les champs.', 'error');
->>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
             return;
         }
         
         if (!isValidEmail(email)) {
-<<<<<<< HEAD
             showNotification('Please enter a valid email address.', 'error');
-=======
-            showNotification('Veuillez entrer une adresse email valide.', 'error');
->>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
             return;
         }
         
         // Simulate form submission
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-<<<<<<< HEAD
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
         setTimeout(() => {
             showNotification('Your message has been sent successfully!', 'success');
-=======
-        submitBtn.textContent = 'Envoi en cours...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('Votre message a été envoyé avec succès!', 'success');
->>>>>>> f14195ecbcc3d6bbea6045fb2a63b3dceb9b5f38
             this.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
