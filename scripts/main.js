@@ -124,25 +124,25 @@ if (contactForm) {
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // Simple validation
+        // Validation simple (FR)
         if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields.', 'error');
+            showNotification('Merci de remplir tous les champs.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
+            showNotification('Veuillez saisir une adresse e‑mail valide.', 'error');
             return;
         }
         
         // Simulate form submission
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Envoi en cours…';
         submitBtn.disabled = true;
         
         setTimeout(() => {
-            showNotification('Your message has been sent successfully!', 'success');
+            showNotification('Votre message a été envoyé avec succès !', 'success');
             this.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
