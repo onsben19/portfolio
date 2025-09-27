@@ -1,36 +1,12 @@
 <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="face" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fdbcb4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffb8b0;stop-opacity:1" />
-    </linearGradient>
   </defs>
-  <!-- Background -->
-  <rect width="300" height="300" fill="url(#bg)" rx="150"/>
-  
-  <!-- Face -->
-  <circle cx="150" cy="120" r="45" fill="url(#face)"/>
-  
-  <!-- Hair -->
-  <ellipse cx="150" cy="90" rx="60" ry="40" fill="#8B4513"/>
-  <ellipse cx="130" cy="85" rx="25" ry="35" fill="#A0522D"/>
-  <ellipse cx="170" cy="85" rx="25" ry="35" fill="#A0522D"/>
-  
-  <!-- Eyes -->
-  <circle cx="140" cy="115" r="3" fill="#2c3e50"/>
-  <circle cx="160" cy="115" r="3" fill="#2c3e50"/>
-  
-  <!-- Smile -->
-  <path d="M 135 130 Q 150 140 165 130" stroke="#2c3e50" stroke-width="2" fill="none"/>
-  
-  <!-- Body -->
-  <ellipse cx="150" cy="220" rx="65" ry="80" fill="#ffffff"/>
-  
-  <!-- Professional details -->
-  <text x="150" y="280" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">ONS BEN MASSOUD</text>
-  <text x="150" y="295" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Software Engineer</text>
+  <rect width="300" height="300" fill="url(#gradient)"/>
+  <circle cx="150" cy="120" r="50" fill="rgba(255,255,255,0.9)"/>
+  <path d="M75 225 Q150 180 225 225 L225 300 L75 300 Z" fill="rgba(255,255,255,0.9)"/>
+  <text x="150" y="280" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.8)" text-anchor="middle">Ons Ben Massoud</text>
 </svg>

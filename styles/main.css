@@ -199,9 +199,11 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center;
     border: 6px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    filter: brightness(1.05) contrast(1.1);
 }
 
 .profile-border {
