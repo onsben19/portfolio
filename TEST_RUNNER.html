@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Tests Portfolio Ons Ben Massoud</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f5f7fa; }
+        .test-container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .test-header { text-align: center; margin-bottom: 30px; }
+        .test-section { margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #667eea; }
+        .test-item { margin: 10px 0; display: flex; align-items: center; }
+        .test-checkbox { margin-right: 10px; transform: scale(1.2); }
+        .test-label { flex: 1; }
+        .status-ok { color: #28a745; font-weight: bold; }
+        .status-error { color: #dc3545; font-weight: bold; }
+        .test-button { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; margin: 5px; }
+        .test-button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .result-box { padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .result-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .result-info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 Tests Portfolio Ons Ben Massoud</h1>
+            <p><strong>URL Test:</strong> <a href="http://localhost:8085" target="_blank">http://localhost:8085</a></p>
+            <p><strong>Portfolio Live:</strong> <a href="https://onsben19.github.io/portfolio" target="_blank">https://onsben19.github.io/portfolio</a></p>
+        </div>
+
+        <div class="test-section">
+            <h3>🖼️ Image de Profil</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="image-load">
+                <label for="image-load" class="test-label">Image profile_ons.jpg se charge correctement</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="image-animation">
+                <label for="image-animation" class="test-label">Animation de bordure rotative visible</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="image-hover">
+                <label for="image-hover" class="test-label">Effet hover (zoom + ombre) fonctionne</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🌐 Changement de Langue</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="lang-buttons">
+                <label for="lang-buttons" class="test-label">Boutons FR/EN visibles en haut à droite</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="lang-en">
+                <label for="lang-en" class="test-label">Clic sur EN traduit tout en anglais</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="lang-fr">
+                <label for="lang-fr" class="test-label">Clic sur FR revient au français</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="lang-persist">
+                <label for="lang-persist" class="test-label">Choix de langue sauvegardé au refresh (F5)</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🧭 Navigation</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="nav-desktop">
+                <label for="nav-desktop" class="test-label">Menu navigation fonctionne sur desktop</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="nav-mobile">
+                <label for="nav-mobile" class="test-label">Menu hamburger sur mobile (réduire fenêtre)</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="nav-scroll">
+                <label for="nav-scroll" class="test-label">Scroll smooth vers les sections</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="nav-active">
+                <label for="nav-active" class="test-label">Section active surlignée pendant le scroll</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>✨ Animations & Effets</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="hero-animation">
+                <label for="hero-animation" class="test-label">Texte du hero apparaît progressivement</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="scroll-animations">
+                <label for="scroll-animations" class="test-label">Sections apparaissent au scroll</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="skill-bars">
+                <label for="skill-bars" class="test-label">Barres de compétences s'animent</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="hover-effects">
+                <label for="hover-effects" class="test-label">Effets hover sur boutons/cartes</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📱 Responsive Design</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="tablet-view">
+                <label for="tablet-view" class="test-label">Layout s'adapte sur tablet (réduire à 768px)</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="mobile-view">
+                <label for="mobile-view" class="test-label">Vue mobile fonctionne (réduire à 480px)</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="text-readable">
+                <label for="text-readable" class="test-label">Texte reste lisible sur petit écran</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Formulaire de Contact</h3>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="form-validation">
+                <label for="form-validation" class="test-label">Validation en temps réel (email invalide)</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="form-required">
+                <label for="form-required" class="test-label">Champs required vérifiés</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" class="test-checkbox" id="form-submit">
+                <label for="form-submit" class="test-label">Animation de soumission (bouton spinner)</label>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🚀 Actions de Test Rapide</h3>
+            <button class="test-button" onclick="openPortfolio()">📱 Ouvrir Portfolio</button>
+            <button class="test-button" onclick="testResponsive()">📏 Test Responsive</button>
+            <button class="test-button" onclick="testLanguages()">🌐 Test Langues</button>
+            <button class="test-button" onclick="checkConsole()">🔍 Vérifier Console</button>
+        </div>
+
+        <div class="result-box result-info">
+            <h4>📊 Instructions de Test:</h4>
+            <ol>
+                <li><strong>Ouvrir le portfolio</strong> dans un onglet séparé</li>
+                <li><strong>Tester chaque fonctionnalité</strong> en cochant les cases</li>
+                <li><strong>Redimensionner</strong> la fenêtre pour tester le responsive</li>
+                <li><strong>Tester sur mobile</strong> réel si possible</li>
+                <li><strong>Vérifier la console</strong> (F12) pour les erreurs</li>
+            </ol>
+        </div>
+
+        <div id="test-results"></div>
+    </div>
+
+    <script>
+        function openPortfolio() {
+            window.open('http://localhost:8085', '_blank');
+            showResult('Portfolio ouvert dans un nouvel onglet', 'success');
+        }
+
+        function testResponsive() {
+            alert('Pour tester le responsive:\n1. Redimensionnez cette fenêtre\n2. Ou utilisez F12 > Device Toolbar\n3. Testez 768px (tablet) et 480px (mobile)');
+            showResult('Instructions responsive affichées', 'info');
+        }
+
+        function testLanguages() {
+            alert('Pour tester les langues:\n1. Cliquez sur EN en haut à droite\n2. Vérifiez la traduction complète\n3. Cliquez sur FR pour revenir\n4. Rafraîchissez (F5) pour tester la persistance');
+            showResult('Instructions langues affichées', 'info');
+        }
+
+        function checkConsole() {
+            alert('Pour vérifier la console:\n1. Appuyez sur F12\n2. Allez dans l\'onglet Console\n3. Vérifiez qu\'il n\'y a pas d\'erreurs rouges\n4. Testez les fonctionnalités');
+            showResult('Instructions console affichées', 'info');
+        }
+
+        function showResult(message, type) {
+            const resultsDiv = document.getElementById('test-results');
+            const resultClass = type === 'success' ? 'result-success' : 'result-info';
+            resultsDiv.innerHTML = `<div class="result-box ${resultClass}">${message}</div>` + resultsDiv.innerHTML;
+        }
+
+        // Auto-check pour certains tests basiques
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simuler quelques vérifications automatiques
+            setTimeout(() => {
+                showResult('✅ Tests initialisés - Portfolio prêt à être testé', 'success');
+            }, 1000);
+        });
+
+        // Compter les tests cochés
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'checkbox') {
+                const totalTests = document.querySelectorAll('.test-checkbox').length;
+                const checkedTests = document.querySelectorAll('.test-checkbox:checked').length;
+                const percentage = Math.round((checkedTests / totalTests) * 100);
+                
+                if (checkedTests > 0) {
+                    showResult(`📊 Progression: ${checkedTests}/${totalTests} tests (${percentage}%)`, 'info');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
