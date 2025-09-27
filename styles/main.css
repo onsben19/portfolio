@@ -26,9 +26,9 @@ body {
 /* Language Switcher */
 .language-switcher {
     position: fixed;
-    top: 20px;
+    top: 90px;
     right: 20px;
-    z-index: 1001;
+    z-index: 900;
     display: flex;
     gap: 5px;
     background: rgba(255, 255, 255, 0.95);
@@ -965,9 +965,9 @@ section:nth-child(even) {
 /* Responsive Design */
 @media (max-width: 768px) {
     .language-switcher {
-        top: 10px;
+        top: 80px;
         right: 10px;
-        flex-direction: column;
+        z-index: 900;
     }
     
     .nav-menu {
