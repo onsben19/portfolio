@@ -12,6 +12,7 @@ const translations = {
         'hero-subtitle': 'Étudiante en Génie Logiciel',
         'hero-description': 'Actuellement en dernière année d\'ingénierie, je suis passionnée par le génie logiciel et motivée par l\'envie de relever de nouveaux défis. J\'aime apprendre, expérimenter et mettre mes connaissances au service de projets concrets. Mon objectif est de rejoindre une équipe dynamique où je pourrai contribuer activement tout en développant mes compétences techniques et humaines.',
         'btn-contact': 'Me contacter',
+        'btn-cv': 'Télécharger CV',
         'btn-projects': 'Voir mes projets',
         'about-title': 'À propos',
         'about-text-1': 'Je suis Ons Ben Massoud, étudiante en dernière année de génie logiciel. Curieuse et motivée, j\'aime apprendre, expérimenter et transformer les idées en solutions concrètes. Je m\'intéresse particulièrement au développement web, à l\'architecture logicielle et aux bonnes pratiques d\'ingénierie.',
@@ -26,6 +27,9 @@ const translations = {
         'education-description': 'Formation complète en génie logiciel avec focus sur les technologies modernes, l\'architecture logicielle et les méthodologies agiles.',
         'prep-title': 'Classes Préparatoires',
         'prep-description': 'Mathématiques, Physique et Sciences de l\'Ingénieur avec spécialisation en informatique.',
+        'bac-title': 'Baccalauréat en Sciences Expérimentales',
+        'bac-school': 'Lycée',
+        'bac-description': 'Diplôme du baccalauréat en sciences expérimentales avec spécialisation en mathématiques et sciences physiques.',
         'experience-title': 'Expérience Professionnelle',
         'exp1-title': 'Développeuse Logiciel',
         'exp1-date': 'Juillet - Présent',
@@ -40,6 +44,10 @@ const translations = {
         'project2-description': 'Application multiplateforme (Desktop, Web, Mobile) pour le suivi quotidien de la santé avec interfaces utilisateur natives et synchronisation des données.',
         'project3-title': 'Système Gestion Agence d\'Ambulances',
         'project3-description': 'Système complet avec interface desktop pour planification, suivi temps réel et système embarqué avec capteurs d\'état et disponibilité des véhicules.',
+        'project4-title': 'TravelTogether - Application Mobile de Voyage Collaboratif',
+        'project4-description': 'Application mobile Flutter pour planification collaborative d\'itinéraires avec système de votes en temps réel, gestion automatisée des dépenses partagées et carte interactive avec géolocalisation et carnet de voyage multimédia.',
+        'project5-title': 'CruxHire AI - Plateforme de Recrutement Automatisé',
+        'project5-description': 'Plateforme web de recrutement automatisée avec gestion intelligente des offres, candidatures et matching automatique. Interface moderne avec authentification sécurisée et intégrations tierces.',
         'skills-title': 'Compétences Techniques',
         'frontend-title': 'Frontend',
         'backend-title': 'Backend',
@@ -73,6 +81,7 @@ const translations = {
         'hero-subtitle': 'Software Engineering Student',
         'hero-description': 'Currently in my final year of engineering, I am passionate about software engineering and motivated by the desire to take on new challenges. I love learning, experimenting and putting my knowledge to work on concrete projects. My goal is to join a dynamic team where I can contribute actively while developing my technical and human skills.',
         'btn-contact': 'Contact me',
+        'btn-cv': 'Download CV',
         'btn-projects': 'View my projects',
         'about-title': 'About',
         'about-text-1': 'I am Ons Ben Massoud, a final-year software engineering student. Curious and motivated, I love learning, experimenting and transforming ideas into concrete solutions. I am particularly interested in web development, software architecture and engineering best practices.',
@@ -87,6 +96,9 @@ const translations = {
         'education-description': 'Comprehensive training in software engineering with focus on modern technologies, software architecture and agile methodologies.',
         'prep-title': 'Preparatory Classes',
         'prep-description': 'Mathematics, Physics and Engineering Sciences with specialization in computer science.',
+        'bac-title': 'Baccalaureate in Experimental Sciences',
+        'bac-school': 'High School',
+        'bac-description': 'Baccalaureate diploma in experimental sciences with specialization in mathematics and physical sciences.',
         'experience-title': 'Professional Experience',
         'exp1-title': 'Software Developer',
         'exp1-date': 'July - Present',
@@ -101,6 +113,10 @@ const translations = {
         'project2-description': 'Multi-platform application (Desktop, Web, Mobile) for daily health tracking with native user interfaces and data synchronization.',
         'project3-title': 'Ambulance Agency Management System',
         'project3-description': 'Complete system with desktop interface for planning, real-time tracking and embedded system with vehicle status and availability sensors.',
+        'project4-title': 'TravelTogether - Collaborative Travel Mobile App',
+        'project4-description': 'Flutter mobile app for collaborative itinerary planning with real-time voting system, automated shared expense management and interactive map with geolocation and multimedia travel journal.',
+        'project5-title': 'CruxHire AI - Automated Recruitment Platform',
+        'project5-description': 'Automated web recruitment platform with intelligent job management, applications and automatic matching. Modern interface with secure authentication and third-party integrations.',
         'skills-title': 'Technical Skills',
         'frontend-title': 'Frontend',
         'backend-title': 'Backend',
@@ -179,6 +195,18 @@ class LanguageManager {
         const titleKey = 'page-title';
         if (translations[this.currentLang][titleKey]) {
             document.title = translations[this.currentLang][titleKey];
+        }
+
+        // Update CV download link based on language
+        const cvBtn = document.getElementById('cv-download-btn');
+        if (cvBtn) {
+            if (this.currentLang === 'fr') {
+                cvBtn.href = 'images/onsCvFr.pdf';
+                cvBtn.download = 'CV_Ons_Ben_Massoud.pdf';
+            } else {
+                cvBtn.href = 'images/OnsResume.pdf';
+                cvBtn.download = 'Resume_Ons_Ben_Massoud.pdf';
+            }
         }
     }
 }
@@ -688,4 +716,91 @@ if (!('scrollBehavior' in document.documentElement.style)) {
             }
         });
     });
+}
+
+// EmailJS Configuration and Contact Form
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init('KKqlGwHL7vuHg2Rcs');
+    
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Prepare template parameters
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: 'onsbenmassoud7@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_dkan6zr', 'template_jefbmmh', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    showNotification('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    showNotification('Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement.', 'error');
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+});
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
 }
